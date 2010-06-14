@@ -1,0 +1,31 @@
+FILES=	iana-protocols \
+	iana-services \
+	ip_flow.c \
+	Makefile \
+	net_read.c \
+	queue.h \
+	queue.man \
+	README.uw \
+	stat.c \
+	tcpdstat.h \
+	ttt_pcap.h
+PWD=tcpdstat-uw
+
+all:
+	make all
+
+md5sums.txt: $(FILES)
+	md5sum $(FILES) > md5sums.txt
+
+push: all md5sums.txt tar
+	tar -cvf - tcpdstat-uw*.tar tcpdstat-uw-tar-md5sum.txt |\
+	ssh dittrich@ovid.u "(cd public_html/tools/; tar -xvf -)"
+
+tar: $(FILES)
+	#tar -C .. -cvf tcpdstat-uw-`head tcpdstat.c | grep '\$$Revision: ' | sed 's/.*\$$Revision: \([0-9\.]*\) \$$.*/\1/'`.tar `ls $(FILES) | sed 's/^/$(PWD)\//'`
+	#ln -f -s tcpdstat-uw-*.tar tcpdstat-uw.tar
+	#md5sum tcpdstat-uw-*.tar > tcpdstat-uw-tar-md5sum.txt
+
+	# No versioning with this puppy
+	tar -C .. -cvf tcpdstat-uw.tar `ls $(FILES) | sed 's/^/$(PWD)\//'`
+	md5sum tcpdstat-uw.tar > tcpdstat-uw-tar-md5sum.txt

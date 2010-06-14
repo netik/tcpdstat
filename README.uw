@@ -1,0 +1,28 @@
+This source was originally obtained from the tcpd-tools-0.9 source
+tree, which is a product of the WIDE Project MAWI WorkingGroup
+(Kenjiro Cho <kjc@csl.sony.co.jp>).
+
+The file "queue.h" was obtained from another system (I think it was
+OpenBSD 3.0, as the above code was written for FreeBSD). The one that
+came with a stock Red Hat Linux release 7.2 system did not work.  This
+"port" was a quick hack to get this working.  (I should find a good
+source for this that I can reference, or port it to use something that
+comes with RH Linux. At least it works.)
+
+To add new sub-protocols to TCP or UDP, you need to edit the following
+files:
+
+tcpdstat.h
+	Add a new identifier to "enum protos" at line 34.
+
+net_read.c
+	Add a new case to the switch statement at line 526.  The
+	identified in the STAT_ADD() call should match the enumeration
+	identifier you added to tcpdstat.h
+
+stat.c
+	Add a new element to the "protos" array in the same order as
+	the "enum protos" list.
+
+
+dittrich@cac.washington.edu  April 13, 2002

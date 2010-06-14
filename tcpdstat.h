@@ -64,6 +64,7 @@ enum protos {
 	      SOCKS_TCP,
 	      KAZAA_TCP,
 	      MS_SQL_S_TCP,
+	      SCRIBE_TCP,
 	      SQUID_TCP,
 	      MS_GC_TCP,
 	      MS_GCS_TCP,

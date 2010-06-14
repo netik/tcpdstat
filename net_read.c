@@ -991,6 +991,7 @@ static void check_port(int sport, int dport, enum protos type)
 		case 1080:	STAT_ADD(SOCKS_TCP); break;
 		case 1214:	STAT_ADD(KAZAA_TCP); break;
 		case 1433:	STAT_ADD(MS_SQL_S_TCP); break;
+		case 1463:	STAT_ADD(SCRIBE_TCP); break;
 		case 3128:	STAT_ADD(SQUID_TCP); break;
 		case 3268:	STAT_ADD(MS_GC_TCP); break;
 		case 3269:	STAT_ADD(MS_GCS_TCP); break;

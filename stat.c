@@ -196,6 +196,7 @@ struct {
 	{"  socks  ",   3},
         {"  kasaa  ",	3},
         {"  mssql-s",	3},
+        {"  scribe ",	3},
         {"  squid  ",	3},
 	{"  ms-gc  ",   3},
 	{"  ms-gcs ",   3},

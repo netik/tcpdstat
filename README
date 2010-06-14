@@ -1,0 +1,6 @@
+
+This is Twitter's / My fork of tcpdstat-uw with some protocol additions for kestrel,
+memcache, and Twitter's internal httpd services.
+
+John Adams
+6/14/2010

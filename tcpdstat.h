@@ -67,6 +67,7 @@ enum protos {
 	      SQUID_TCP,
 	      MS_GC_TCP,
 	      MS_GCS_TCP,
+   	      MYSQL_TCP,
 	      HOTLINE_TCP,
 	      REALAUDIO_TCP,
 	      SHOUTCAST_TCP,

@@ -199,6 +199,7 @@ struct {
         {"  squid  ",	3},
 	{"  ms-gc  ",   3},
 	{"  ms-gcs ",   3},
+	{"  mysql  ",   3},
         {"  hotline",	3},
         {"  realaud",	3},
         {"  icecast",	3},
